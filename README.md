@@ -40,7 +40,7 @@ Apa fungsi dari setState()? Jelaskan variabel apa saja yang dapat terdampak deng
 -------------------------------
 Jawaban:
 
-seState berfungsi untuk mengubah state dari widget. Variabel yang terdampak adalah variabel yang berada di dalam state karena variabel yang berada di dalam state akan berubah jika fungsi dari setState dipanggil, sedangkan variabel yang berada di luar state tidak akan berubah jika fungsi dari setState dipanggil.
+setState berfungsi untuk mengubah state dari widget. Variabel yang terdampak adalah variabel yang berada di dalam state karena variabel yang berada di dalam state akan berubah jika fungsi dari setState dipanggil, sedangkan variabel yang berada di luar state tidak akan berubah jika fungsi dari setState dipanggil.
 
 -------------------------------
 ## 3.  Jelaskan perbedaan antara const dengan final!
