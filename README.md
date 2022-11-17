@@ -105,6 +105,7 @@ Jawaban:
 
 -------------------------------------
 Jawaban:
+
 Navigator di dalam flutter memiliki cara kerja seperti stack karena menerapkan LIFO (last-in, first-out) yang mana ketika widget ini ditrigger, maka akan menumpuk halaman yang dipanggil di atas halaman saat ini, kemudian jika dipop, maka akan mengambil halaman yang terakhir dipanggil. 
 
 --------------------------------------
