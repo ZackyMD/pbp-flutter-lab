@@ -1,4 +1,7 @@
+import 'package:counter_7/form.dart';
 import 'package:flutter/material.dart';
+import 'package:counter_7/data.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -108,13 +111,13 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             _counter % 2 == 0
                 ? const Text(
-              'GENAP',
-              style: TextStyle(color: Colors.red),
-            )
+                    'GENAP',
+                    style: TextStyle(color: Colors.red),
+                  )
                 : const Text(
-              'GANJIL',
-              style: TextStyle(color: Colors.blue),
-            ),
+                    'GANJIL',
+                    style: TextStyle(color: Colors.blue),
+                  ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
@@ -122,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton:  Stack(
+      floatingActionButton: Stack(
         children: [
           if (_counter > 0)
             Align(
@@ -150,6 +153,47 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      drawer: Drawer(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text('Drawer Header'),
+            ),
+            ListTile(
+              title: const Text('counter_7'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => const MyApp()));
+              },
+            ),
+            ListTile(
+              title: const Text('Tambah Budget'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => const FormPage()));
+              },
+            ),
+            ListTile(
+              title: const Text('Data Budget'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => const DataPage()));
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

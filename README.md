@@ -58,3 +58,69 @@ Jawaban:
 
 Saya membuat stateless widget untuk membuat widget yang tetap (tidak berubah ketika state ditrigger) dengan isi widgetnya adalah tema aplikasi, kemudian untuk statefulWidget saya membuat widget yang berisi widget-widget yang nantinya berubah ketika state ditrigger. Saya membuat variabel _counter untuk menyimpan nilai yang ingin ditampilkan pada aplikasi counter. Pada statefulWidget saya membuat method increment dan decrement untuk menjumlahkan dan mengurangi counter jika nilai > 0. Setelah itu, pada widget build, saya membuat Widget build untuk menampilkan suatu teks jika counter mod 2 == 0 akan menampilkan teks genap, dan sebaliknya jika counter mod 2 == 1 akan menampilkan teks ganjil. Untuk decrementCounter, jika counter tidak > 0, maka tombol decrement akan diremove.
 
+---------------------------------
+
+# Tugas 8 README.md
+
+---------------------------------
+##  Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement!
+
+---------------------------------
+Jawaban:
+
+Navigator.push = Metode push digunakan untuk menambahkan rute lain ke atas tumpukan screen (stack) saat ini. Halaman baru ditampilkan di atas halaman sebelumnya.
+
+Navigator.replacement = Metode yang digunakan untuk menggantikan halaman sebelumnya dengan halaman yang diinisiasikan pada method ini.
+
+-----------------------------------
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya!
+
+-----------------------------------
+Jawaban:
+
+- MaterialApp : Menerapkan material design.
+- ThemeData : Mmebagikan tema ke seluruh bagian aplikasi.
+- AppBar : Menjadi judul dari sebuah app atau page. 
+- Drawer : Menampilkan menu yang tersembunyi pada sisi kiri atau kanan sebuah halaman.
+- Listview : Mempresentassikan data yang banyak secara bersamaan.
+- Text : Menampilkan dan memberikan style pada teks.
+- Padding : Menambahkan ruang kosong antara widget yang satu dengan widget yang lainnya.
+- Column : Menempatkan seluruh childrennya secara vertikal.
+- Form : Menyediakan wadah untuk widget-widget pengisi form
+- Container : Widget yang hanya memiliki satu buah child. Namun, dapat menampung row, column, dan text atau bahkan container lainnya.
+
+
+------------------------------------
+## Sebutkan jenis-jenis event yang ada pada Flutter!
+
+------------------------------------
+Jawaban:
+
+- onTap
+- onChanged
+- onSaved
+
+------------------------------------
+## Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter!
+
+-------------------------------------
+Jawaban:
+Navigator di dalam flutter memiliki cara kerja seperti stack karena menerapkan LIFO (last-in, first-out) yang mana ketika widget ini ditrigger, maka akan menumpuk halaman yang dipanggil di atas halaman saat ini, kemudian jika dipop, maka akan mengambil halaman yang terakhir dipanggil. 
+
+--------------------------------------
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas!
+
+--------------------------------------
+Jawaban:
+
+Pertama-tama, saya membuat drawer yang berguna agar user dapat memillih halaman mana yang ingin digunakan. Setelah itu, saya membuat form di dalam form.dart yang mengambil input dari user agar data dapat diolah, kemudian data yang telah diolah, akan ditampilkan pada halaman data yang merefer ke file data.dart. Tentunya di dalam membuat form, diperlukan inisiasi agar value dapat tersimpan pada variabel, seperti pada form.dart di bawah ini:
+
+final _formKey = GlobalKey<FormState>();
+String _judul = "";
+int _nominal = 0;
+String kategori = 'Pemasukan';
+List<String> listKategori = ['Pemasukan', 'Pengeluaran'];
+DateTime _date = DateTime.now();
+
+Lalu, data yang tersimpan pada vaiabel harus di simpan di dalam list agar data yang telah diinput dapat direcord untuk ditampilkan di dalam data.dart
+
