@@ -79,7 +79,7 @@ Navigator.replacement = Metode yang digunakan untuk menggantikan halaman sebelum
 Jawaban:
 
 - MaterialApp : Menerapkan material design.
-- ThemeData : Mmebagikan tema ke seluruh bagian aplikasi.
+- ThemeData : Membagikan tema ke seluruh bagian aplikasi.
 - AppBar : Menjadi judul dari sebuah app atau page. 
 - Drawer : Menampilkan menu yang tersembunyi pada sisi kiri atau kanan sebuah halaman.
 - Listview : Mempresentassikan data yang banyak secara bersamaan.
@@ -124,4 +124,50 @@ List<String> listKategori = ['Pemasukan', 'Pengeluaran'];
 DateTime _date = DateTime.now();
 
 Lalu, data yang tersimpan pada vaiabel harus di simpan di dalam list agar data yang telah diinput dapat direcord untuk ditampilkan di dalam data.dart
+
+----------------------------------
+# Tugas 9
+
+----------------------------------
+
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+
+-----------------------------------
+Jawaban:
+
+Sebenarnya, hal tersebut mungkin saja dapat dilakukan. Akan tetapi, kita tidak dapat mengakses data tersebut seperti halnya sebuah class yang menyebabkan pemrograman menjadi kurang efisien.
+
+------------------------------------
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya!
+
+-------------------------------------
+Jawaban:
+
+- MaterialApp : Menerapkan material design.
+- ThemeData : Membagikan tema ke seluruh bagian aplikasi.
+- AppBar : Menjadi judul dari sebuah app atau page. 
+- Drawer : Menampilkan menu yang tersembunyi pada sisi kiri atau kanan sebuah halaman.
+- Listview : Mempresentassikan data yang banyak secara bersamaan.
+- Text : Menampilkan dan memberikan style pada teks.
+- Padding : Menambahkan ruang kosong antara widget yang satu dengan widget yang lainnya.
+- Column : Menempatkan seluruh childrennya secara vertikal.
+- Container : Widget yang hanya memiliki satu buah child. Namun, dapat menampung row, column, dan text atau bahkan container lainnya.
+- Flexible : agar text tidak overflow
+
+-----------------------------------------
+## Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter!
+
+-----------------------------------------
+Jawaban:
+
+Pertama-tama, saya menjalankan perintah 'flutter pub add http' di dalam terminal, kemudian saya melakukan pembuatan HTTP Request untuk GET yang mana GET ini nantinya akan diubah sama seperti model pada tugas 3 sebelumnya. Terakhir, saya membuat method FutureBuilder untuk membuat widget yang menggunakan data yang diambil pada GET sebelumnya.
+
+--------------------------
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas!
+
+--------------------------
+Jawaban:
+
+Pertama-tama, saya menjalankan perintah 'flutter pub add http' di dalam terminal, kemudian saya membuat model watchlist dan page watchlist. Setelah itu, saya menambahkann watchlist tadi ke dalam drawer agar dapat diakses halamannya, kemudian saya membuat file untuk fetchData dari url JSON pada tugas 3, lalu saya melakukan fetch dengan method futureBuiler di dalam file mywatchlist.dart. Data yang telah diambil pada JSON akan diloop dengan item builder dan akan membentuk komponen seperti kumpulan card. Terakhir, saya membuat navigator push yang nantinya akan menampilkan detail dari film yang diambil datanya pada GET ketika komponen seperti card diklik. 
+
 

@@ -1,7 +1,9 @@
 import 'package:counter_7/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:counter_7/data.dart';
+import 'package:counter_7/page/data.dart';
+import 'package:counter_7/page/mywatchlist.dart';
+
 
 class DataBudget{
   String judul;
@@ -39,44 +41,53 @@ class _FormPageState extends State<FormPage> {
       ),
       drawer: Drawer(
         child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
+              // Important: Remove any padding from the ListView.
+              padding: EdgeInsets.zero,
+              children: [
+                const DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                  ),
+                  child: Text('Drawer Header'),
+                ),
+                ListTile(
+                  title: const Text('counter_7'),
+                  onTap: () {
+                    // Update the state of the app.
+                    // ...
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => const MyApp()));
+                  },
+                ),
+                ListTile(
+                  title: const Text('Tambah Budget'),
+                  onTap: () {
+                    // Update the state of the app.
+                    // ...
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => const FormPage()));
+                  },
+                ),
+                ListTile(
+                  title: const Text('Data Budget'),
+                  onTap: () {
+                    // Update the state of the app.
+                    // ...
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => const DataPage()));
+                  },
+                ),
+                ListTile(
+                  title: const Text('Watch List'),
+                  onTap: () {
+                    // Update the state of the app.
+                    // ...
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => const WatchList()));
+                  },
+                )
+              ],
             ),
-            ListTile(
-              title: const Text('counter_7'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => const MyApp()));
-              },
-            ),
-            ListTile(
-              title: const Text('Tambah Budget'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => const FormPage()));
-              },
-            ),
-            ListTile(
-              title: const Text('Data Budget'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => const DataPage()));
-              },
-            ),
-          ],
-        ),
       ),
 
       body: Form(
